@@ -68,7 +68,7 @@ home.addEventListener("click", function() {
 async function getCPU() {
     let promise = await fetch("https://csa2020studentapi.azurewebsites.net/rpsls");
     cpuAns = await promise.text();
-    console.log(cpuAns);
+    // console.log(cpuAns);
 }
 
 function displayUserImg(userAns){
