@@ -51,7 +51,7 @@ scissors.addEventListener("click", function () {
 });
 lizard.addEventListener("click", function () {
     userAns = 'Lizard';
-    if (enter.classList.contains('d-none'))nenter.classList.remove('d-none');
+    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
 });
 spock.addEventListener("click", function () {
     userAns = 'Spock';
@@ -75,19 +75,19 @@ async function getCPU() {
 function displayUserImg(userAns){
     switch (userAns) {
         case 'Rock':
-            userImg = document.getElementById("userImg").src = "../images/rock.png";
+            userImg = document.getElementById("userImg").src = "../images/rockBtn.png";
             break;
         case 'Paper':
-            userImg = document.getElementById("userImg").src = "../images/paper.png";
+            userImg = document.getElementById("userImg").src = "../images/paperBtn.png";
             break;
         case 'Scissors':
-            userImg = document.getElementById("userImg").src = "../images/scissors.png";
+            userImg = document.getElementById("userImg").src = "../images/scissorsBtn.png";
             break;
         case 'Lizard':
-            userImg = document.getElementById("userImg").src = "../images/lizard.png";
+            userImg = document.getElementById("userImg").src = "../images/lizardBtn.png";
             break;
         case 'Spock':
-            userImg = document.getElementById("userImg").src = "../images/spock.png";
+            userImg = document.getElementById("userImg").src = "../images/spockBtn.png";
             break;
         default: alert('Something is wrong, please refresh the page.');
             break;
@@ -97,19 +97,19 @@ function displayUserImg(userAns){
 function displayCpuImg(cpuAns) {
     switch (cpuAns) {
         case 'Rock':
-            cpuImg = document.getElementById("cpuImg").src = "../images/rock.png";
+            cpuImg = document.getElementById("cpuImg").src = "../images/rockBtn.png";
             break;
         case 'Paper':
-            cpuImg = document.getElementById("cpuImg").src = "../images/paper.png";
+            cpuImg = document.getElementById("cpuImg").src = "../images/paperBtn.png";
             break;
         case 'Scissors':
-            cpuImg = document.getElementById("cpuImg").src = "../images/scissors.png";
+            cpuImg = document.getElementById("cpuImg").src = "../images/scissorsBtn.png";
             break;
         case 'Lizard':
-            cpuImg = document.getElementById("cpuImg").src = "../images/lizard.png";
+            cpuImg = document.getElementById("cpuImg").src = "../images/lizardBtn.png";
             break;
         case 'Spock':
-            cpuImg = document.getElementById("cpuImg").src = "../images/spock.png";
+            cpuImg = document.getElementById("cpuImg").src = "../images/spockBtn.png";
             break;
         default: alert('Something is wrong, please refresh the page.');
             break;
@@ -135,7 +135,7 @@ function compare(user, cpu) {
     else if (user == 'Rock' && !rockLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
-        displayMessage.innerText = "Great job! You Win!";
+        displayMessage.innerText = "Great job! You Won!";
 
         console.log(userScoreAdd);
         console.log("User Wins");
@@ -143,7 +143,7 @@ function compare(user, cpu) {
     else if (user == 'Paper' && !paperLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
-        displayMessage.innerText = "Great job! You Win!";
+        displayMessage.innerText = "Great job! You Won!";
 
         console.log(userScoreAdd);
         console.log("User Wins");
@@ -151,7 +151,7 @@ function compare(user, cpu) {
     else if (user == 'Scissors' && !scissorsLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
-        displayMessage.innerText = "Great job! You Win!";
+        displayMessage.innerText = "Great job! You Won!";
 
         console.log(userScoreAdd);
         console.log("User Wins");
@@ -159,7 +159,7 @@ function compare(user, cpu) {
     else if (user == 'Lizard' && !lizardLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
-        displayMessage.innerText = "Great job! You Win!";
+        displayMessage.innerText = "Great job! You Won!";
 
         console.log(userScoreAdd);
         console.log("User Wins");
@@ -167,7 +167,7 @@ function compare(user, cpu) {
     else if (user == 'Spock' && !spockLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
-        displayMessage.innerText = "Great job! You Win!";
+        displayMessage.innerText = "Great job! You Won!";
 
         console.log(userScoreAdd);
         console.log("User Wins");
