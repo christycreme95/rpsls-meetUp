@@ -7,8 +7,9 @@ let spock = document.getElementById("spock");
 let cpu = document.getElementById("cpu");
 let enter = document.getElementById("enter");
 let btnDiv = document.getElementById("btnDiv");
-let secondAns = '';
+let cpuAns = '';
 let userAns = '';
+let win = '';
 
 start.addEventListener("click", function(){
     getCPU();
@@ -20,18 +21,22 @@ start.addEventListener("click", function(){
     
 });
 
-rock.addEventListener("click", function(){userAns = 'rock';})
-paper.addEventListener("click", function(){userAns = 'paper';})
-scissors.addEventListener("click", function(){userAns = 'scissors';})
-lizard.addEventListener("click", function(){userAns = 'lizard';})
-spock.addEventListener("click", function(){userAns = 'spock';})
+rock.addEventListener("click", function(){userAns = 'Rock'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
+paper.addEventListener("click", function(){userAns = 'Paper'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
+scissors.addEventListener("click", function(){userAns = 'Scissors'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
+lizard.addEventListener("click", function(){userAns = 'Lizard'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
+spock.addEventListener("click", function(){userAns = 'Spock'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
 enter.addEventListener("click", function(){
-    
+    // this is where we're going to compare you answer to the cpu answer.
+    console.log("user = " + userAns, "cpu = " + cpuAns);
 });
 
 async function getCPU() {
     let promise = await fetch("https://csa2020studentapi.azurewebsites.net/rpsls");
-    secondAns = await promise.text();
-    console.log(secondAns);
+    cpuAns = await promise.text();
+    console.log(cpuAns);
 }
 
+function compare(user, cpu){
+    console.log(user, cpu);
+}
