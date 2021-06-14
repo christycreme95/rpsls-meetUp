@@ -62,6 +62,7 @@ async function getCPU() {
 function compare(user, cpu){
     // console.log(user, cpu);
     btnDiv.classList.add('d-none');
+    enter.classList.add('d-none');
     console.log("user = " + user, "cpu = " + cpu);
     if(user == cpu){
         console.log("Tie")
