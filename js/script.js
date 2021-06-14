@@ -10,6 +10,12 @@ let btnDiv = document.getElementById("btnDiv");
 let cpuAns = '';
 let userAns = '';
 let win = '';
+let rockLose = ['Paper', 'Spock'];
+let paperLose = ['Scissors', 'Lizard'];
+let scissorsLose = ['Rock', 'Spock'];
+let lizardLose = ['Rock', 'Scissors'];
+let spockLose = ['Paper', 'Lizard'];
+
 
 start.addEventListener("click", function(){
     getCPU();
@@ -20,6 +26,7 @@ start.addEventListener("click", function(){
     // using this set timeout so a user can't press the answer buttons until AFTER the fetch happens.
     
 });
+
 
 rock.addEventListener("click", function(){
     userAns = 'Rock'; 
@@ -55,5 +62,20 @@ async function getCPU() {
 function compare(user, cpu){
     // console.log(user, cpu);
     btnDiv.classList.add('d-none');
-    console.log("user = " + userAns, "cpu = " + cpuAns);
+    console.log("user = " + user, "cpu = " + cpu);
+    if(user == cpu){
+        console.log("Tie")
+    }else if(user == 'Rock' && rockLose.includes(cpu)){
+        console.log("User Wins");
+    }else if(user == 'Paper' && paperLose.includes(cpu)){
+        console.log("User Wins");
+    }else if(user == 'Scissors' && scissorsLose.includes(cpu)){
+        console.log("User Wins");
+    }else if(user == 'Lizard' && lizardLose.includes(cpu)){
+        console.log("User Wins");
+    }else if(user == 'Spock' && spockLose.includes(cpu)){
+        console.log("User Wins");
+    }else{
+        console.log("CPU Wins");
+    }
 }
