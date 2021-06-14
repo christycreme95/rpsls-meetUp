@@ -16,19 +16,34 @@ start.addEventListener("click", function(){
     // remove the d-none from the btnDiv
     setTimeout(function(){
         btnDiv.classList.remove("d-none");
-    },200)
+    },300)
     // using this set timeout so a user can't press the answer buttons until AFTER the fetch happens.
     
 });
 
-rock.addEventListener("click", function(){userAns = 'Rock'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
-paper.addEventListener("click", function(){userAns = 'Paper'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
-scissors.addEventListener("click", function(){userAns = 'Scissors'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
-lizard.addEventListener("click", function(){userAns = 'Lizard'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
-spock.addEventListener("click", function(){userAns = 'Spock'; if(enter.classList.contains('d-none')) enter.classList.remove('d-none');});
+rock.addEventListener("click", function(){
+    userAns = 'Rock'; 
+    if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
+});
+paper.addEventListener("click", function(){
+    userAns = 'Paper'; 
+    if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
+});
+scissors.addEventListener("click", function(){
+    userAns = 'Scissors'; 
+    if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
+});
+lizard.addEventListener("click", function(){
+    userAns = 'Lizard'; 
+    if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
+});
+spock.addEventListener("click", function(){
+    userAns = 'Spock'; 
+    if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
+});
 enter.addEventListener("click", function(){
     // this is where we're going to compare you answer to the cpu answer.
-    console.log("user = " + userAns, "cpu = " + cpuAns);
+    compare(userAns,cpuAns);
 });
 
 async function getCPU() {
@@ -38,5 +53,7 @@ async function getCPU() {
 }
 
 function compare(user, cpu){
-    console.log(user, cpu);
+    // console.log(user, cpu);
+    btnDiv.classList.add('d-none');
+    console.log("user = " + userAns, "cpu = " + cpuAns);
 }
