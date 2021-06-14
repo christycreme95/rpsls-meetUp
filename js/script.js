@@ -27,7 +27,6 @@ start.addEventListener("click", function(){
     
 });
 
-
 rock.addEventListener("click", function(){
     userAns = 'Rock'; 
     if(enter.classList.contains('d-none')) enter.classList.remove('d-none');
@@ -66,16 +65,21 @@ function compare(user, cpu){
     console.log("user = " + user, "cpu = " + cpu);
     if(user == cpu){
         console.log("Tie")
-    }else if(user == 'Rock' && rockLose.includes(cpu)){
+    }else if(user == 'Rock' && !rockLose.includes(cpu)){
         console.log("User Wins");
-    }else if(user == 'Paper' && paperLose.includes(cpu)){
+
+    }else if(user == 'Paper' && !paperLose.includes(cpu)){
         console.log("User Wins");
-    }else if(user == 'Scissors' && scissorsLose.includes(cpu)){
+    
+    }else if(user == 'Scissors' && !scissorsLose.includes(cpu)){
         console.log("User Wins");
-    }else if(user == 'Lizard' && lizardLose.includes(cpu)){
+    
+    }else if(user == 'Lizard' && !lizardLose.includes(cpu)){
         console.log("User Wins");
-    }else if(user == 'Spock' && spockLose.includes(cpu)){
+    
+    }else if(user == 'Spock' && !spockLose.includes(cpu)){
         console.log("User Wins");
+    
     }else{
         console.log("CPU Wins");
     }
