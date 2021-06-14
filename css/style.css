@@ -1,5 +1,140 @@
+body {
+    height: 90vh;
+    /* overflow: hidden; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
 
-.center{
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3.2vw;
+    font-family: 'Balsamiq Sans', cursive;
+    color: white;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2.2vw;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+p {
+    font-size: 1.5vw;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+img {
+    width: 4vw;
+    height: auto;
+}
+
+.choice {
+    width: 6vw;
+    height: auto;
+    box-shadow: 2px 9px 5px rgb(158, 158, 158);
+}
+
+.weaponChoice{
+    width: 4vw;
+    height: auto;
+}
+
+.choice:hover {
+    border: 2px solid;
+    color: white;
+}
+
+.choice:active {
+    background-color: grey;
+    transform: translateY(4px);
+    box-shadow: 1px 1px 1px grey;
+}
+
+.skyBlueBG {
+    background-color: #00afc4;
+}
+
+.center {
     display: flex;
     justify-content: center;
+}
+
+.around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.allBtn {
+    background-color: #FE1A00;
+    color: white;
+    box-shadow: 2px 9px 5px rgb(158, 158, 158);
+    outline: none;
+    width: 20vw;
+    height: auto;
+    font-size: 1.5vw;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.allBtn:hover {
+    background-color: #cf1e0a;
+    border: 2px solid;
+    color: white;
+}
+
+.allBtn:active {
+    background-color: grey;
+    transform: translateY(4px);
+    box-shadow: 1px 1px 1px grey;
+}
+
+.gamePadding {
+    padding: 0 0 1rem;
+}
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.start {
+    display: flex;
+    justify-content: first baseline;
+}
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-weight: bold;
+        font-size: 3.1vh;
+        font-family: 'Balsamiq Sans', cursive;
+        color: white;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 2.2vh;
+        font-family: 'Balsamiq Sans', cursive;
+    }
+    p {
+        font-size: 1.5vh;
+        font-family: 'Balsamiq Sans', cursive;
+    }
+    img {
+        width: 4vh;
+        height: auto;
+    }
+    .allBtn {
+        width: 23vw;
+        height: auto;
+        font-size: 1.1vh;
+    }
+    .choice {
+        width: 8vw;
+        height: auto;
+    }
 }

@@ -7,49 +7,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 
-  <title>RPSLS</title>
+  <title>Rock, Paper, Scissors, Lizard, Spock</title>
 </head>
 
 <body>
-  <div class="container">
+  <!--~~~~~~~~~ HOME SCREEN ~~~~~~~~~-->
+  <div class="container-fluid py-4 skyBlueBG">
     <div class="row">
-      <div class="col-12 text-center">
-        <h1>Rock Paper Scissors Lizard Spock</h1>
+      <div class="col-12 center">
+        <h1>R<img src="./images/rock.png" alt="image of a diamond rock">CK, &nbsp;
+        </h1>
+        <h1>P<img src="./images/paper.png" alt="image of a paper airplane">PER,
+        </h1>
+      </div>
+      <div class="col-12 center">
+        <h1>S<img src="./images/scissors.png" alt="image of scissors">ISSORS, &nbsp;</h1>
+        <h1>LI<img src="./images/lizard.png" alt="image of a lizard">ARD, </h1>
+      </div>
+      <div class="col-12 center">
+        <h1>SP<img src="./images/spock.png" alt="image of Spock">CK
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div id="rules" class="container-fluid mt-2">
+    <div class="row gamePadding">
+      <div class="col-12 mt-3">
+        <h2 class="center mb-4 text-center">Rules of the game</h2>
+        <p class="center text-center">Scissors cuts paper. Paper covers rock. Rock crushes lizard.</p>
+        <p class="center text-center">Lizard poisons Spock. Spock smashes scissors. Scissors decapitates lizard.
+        </p>
+        <p class="center text-center">Lizard eats paper. Paper disproves Spock. Spock vaporizes rock. Rock
+          crushes scissors.</p>
+      </div>
+      <div id="letsPlay" class="col-12 mt-3 text-center">
+        <h2 class="center mb-2">Let's Play!</h2>
+        <button id="cpuBtn" type="button" class="btn allBtn">You vs CPU</button>
+      </div>
+    </div>
+  </div>
 
-        <button id="start" class="mb-2 btn btn-primary">Let's Play!</button>
+  
+  <!--~~~~~~~~~ ACTIVE GAME SCREEN ~~~~~~~~~-->
+
+  <div id="gamePlay" class="container-fluid d-none">
+    <div class="row">
+      <div class="col-12 center mb-1 mt-4">
+        <h2 id="displayMessage">Select your weapon!</h2>
+      </div>
+    </div>
+    <div id="yourWeapons" class="row">
+      <div class="col-12 center mb-1">
         <div>
-          <p id="cpu"></p>
-        </div>
-
-        <div id="btnDiv" class="d-none">
-          <div>
-            <button id="rock" class="mt-1 mx-1 btn btn-outline-primary">Rock</button>
-            <button id="paper" class="mt-1 mx-1 btn btn-outline-primary">Paper</button>
-            <button id="scissors" class="mt-1 mx-1 btn btn-outline-primary">Scissors</button>
-            <button id="lizard" class="mt-1 mx-1 btn btn-outline-primary">Lizard</button>
-            <button id="spock" class="mt-1 mx-1 btn btn-outline-primary">Spock</button>
-          </div>
-          <button id="enter" class="d-none mt-1 mx-1 btn btn-primary">Submit</button>
+          <button id="rock" class="btn">
+            <img class="rounded-circle choice" src="./images/rockBtn.png" alt="Rock Button">
+          </button>
+          <button id="paper" class="btn">
+            <img class="rounded-circle choice" src="./images/paperBtn.png" alt="Paper Button">
+          </button>
+          <button id="scissors" class="btn">
+            <img class="rounded-circle choice" src="./images/scissorsBtn.png" alt="Scissor Button">
+          </button>
+          <button id="lizard" class="btn">
+            <img class="rounded-circle choice" src="./images/lizardBtn.png" alt="Lizard Button">
+          </button>
+          <button id="spock" class=" btn">
+            <img class="rounded-circle choice" src="./images/spockBtn.png" alt="Spock Button">
+          </button>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-6 center">
+        <h2 class="center">Score:&nbsp; <h2 id="userScoreAdd" class="center">0</h2>
+        </h2>
+      </div>
+      <div class="col-6 center">
+        <h2 id="cpuScore" class="center">Score:&nbsp; <h2 id="cpuScoreAdd" class="center">0</h2>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 center">
+        <h2>You</h2>
+      </div>
+      <div class="col-6 center">
+        <h2>CPU</h2>
+      </div>
+    </div>
+    <div class="row gamePadding">
+      <div id="player1Pick" class="col-6 center">
+        <img id="userImg" class="weaponChoice" src="../images/questionMark.png">
+      </div>
+      <div id="player2Pick" class="col-6 center">
+        <img id="cpuImg" class="weaponChoice" src="../images/questionMark.png">
+      </div>
+    </div>
+    <div class="col-12 mt-1 pb-5 text-center">
+      <button id="enter" type="button" class="btn allBtn d-none">Enter</button>
+    </div>
+    <div class="col-12 mt-1 pb-5 text-center">
+      <button id="home" type="button" class="btn allBtn d-none">Return Home</button>
     </div>
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
     crossorigin="anonymous"></script>
-  <script src="./js/script.js"></script>
+  <script type="module" src="./js/script.js"></script>
+
   <!-- Option 2: Separate Popper and Bootstrap JS -->
   <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
 </body>
 
