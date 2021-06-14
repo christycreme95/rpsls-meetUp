@@ -26,7 +26,6 @@ let scissorsLose = ['Rock', 'Spock'];
 let lizardLose = ['Rock', 'Scissors'];
 let spockLose = ['Paper', 'Lizard'];
 
-
 cpuBtn.addEventListener("click", function () {
     getCPU();
     // remove the d-none from the btnDiv
@@ -125,11 +124,11 @@ function compare(user, cpu) {
     rules.classList.add('d-none');
     home.classList.remove('d-none');
 
-    console.log("user = " + user, "cpu = " + cpu);
+    // console.log("user = " + user, "cpu = " + cpu);
 
     if (user == cpu) {
         displayMessage.innerText = "It's a draw!";
-        console.log("Tie")
+        // console.log("Tie")
 
     }
     else if (user == 'Rock' && !rockLose.includes(cpu)) {
@@ -137,43 +136,43 @@ function compare(user, cpu) {
         userScoreAdd.innerText = userScore;
         displayMessage.innerText = "Great job! You Won!";
 
-        console.log(userScoreAdd);
-        console.log("User Wins");
+        // console.log(userScoreAdd);
+        // console.log("User Wins");
     }
     else if (user == 'Paper' && !paperLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
         displayMessage.innerText = "Great job! You Won!";
 
-        console.log(userScoreAdd);
-        console.log("User Wins");
+        // console.log(userScoreAdd);
+        // console.log("User Wins");
     }
     else if (user == 'Scissors' && !scissorsLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
         displayMessage.innerText = "Great job! You Won!";
 
-        console.log(userScoreAdd);
-        console.log("User Wins");
+        // console.log(userScoreAdd);
+        // console.log("User Wins");
     }
     else if (user == 'Lizard' && !lizardLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
         displayMessage.innerText = "Great job! You Won!";
 
-        console.log(userScoreAdd);
-        console.log("User Wins");
+        // console.log(userScoreAdd);
+        // console.log("User Wins");
     }
     else if (user == 'Spock' && !spockLose.includes(cpu)) {
         userScore++;
         userScoreAdd.innerText = userScore;
         displayMessage.innerText = "Great job! You Won!";
 
-        console.log(userScoreAdd);
-        console.log("User Wins");
+        // console.log(userScoreAdd);
+        // console.log("User Wins");
     }
     else {
-        console.log("CPU Wins");
+        // console.log("CPU Wins");
         cpuScore++;
         cpuScoreAdd.innerText = cpuScore;
         displayMessage.innerText = "Oh snap! You LOST THE GAME!!";
