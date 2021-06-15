@@ -123,31 +123,22 @@ img {
 
 @media screen and (max-width: 800px) {
     h1 {
-        font-weight: bold;
         font-size: 3.1vh;
-        font-family: 'Balsamiq Sans', cursive;
-        color: white;
     }
     h2 {
-        font-weight: bold;
         font-size: 2.2vh;
-        font-family: 'Balsamiq Sans', cursive;
     }
     p {
         font-size: 1.5vh;
-        font-family: 'Balsamiq Sans', cursive;
     }
     img {
         width: 4vh;
-        height: auto;
     }
     .allBtn {
         width: 23vw;
-        height: auto;
         font-size: 1.1vh;
     }
     .choice {
         width: 8vw;
-        height: auto;
     }
 }
