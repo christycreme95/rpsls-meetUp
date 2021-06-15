@@ -1,3 +1,14 @@
+/*
+Created by:
+
+Christy Eang      https://eang.dev/
+and
+Carlos Gonzalez   https://cgonza.dev/
+
+CodeStack Meetup - 6/16/2021
+*/
+
+
 let cpuBtn = document.getElementById("cpuBtn");
 let letsPlay = document.getElementById("letsPlay");
 let gamePlay = document.getElementById("gamePlay");
