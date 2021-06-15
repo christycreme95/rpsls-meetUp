@@ -20,6 +20,7 @@ let lizard = document.getElementById("lizard");
 let spock = document.getElementById("spock");
 let enter = document.getElementById("enter");
 let home = document.getElementById("home");
+let joke = document.getElementById("joke");
 let yourWeapons = document.getElementById("yourWeapons");
 let userScoreAdd = document.getElementById("userScoreAdd");
 let cpuScoreAdd = document.getElementById("cpuScoreAdd");
@@ -36,6 +37,7 @@ let paperLose = ['Scissors', 'Lizard'];
 let scissorsLose = ['Rock', 'Spock'];
 let lizardLose = ['Rock', 'Scissors'];
 let spockLose = ['Paper', 'Lizard'];
+
 
 cpuBtn.addEventListener("click", function () {
     getCPU();
@@ -74,12 +76,27 @@ enter.addEventListener("click", function () {
 });
 home.addEventListener("click", function() {
     window.location.reload();
-})
+});
+
+joke.addEventListener("click", function () {
+    getJoke();
+});
+
 
 async function getCPU() {
     let promise = await fetch("https://csa2020studentapi.azurewebsites.net/rpsls");
+
     cpuAns = await promise.text();
     // console.log(cpuAns);
+}
+
+async function getJoke() {
+    await fetch("https://api.chucknorris.io/jokes/random")
+    .then(response => response.json())
+    .then(joke =>{
+        console.log(joke)
+        displayMessage.innerText = joke.value;
+    });
 }
 
 function displayUserImg(userAns){
@@ -134,6 +151,8 @@ function compare(user, cpu) {
     yourWeapons.classList.add('d-none');
     rules.classList.add('d-none');
     home.classList.remove('d-none');
+    joke.classList.remove('d-none');
+
 
     // console.log("user = " + user, "cpu = " + cpu);
 
