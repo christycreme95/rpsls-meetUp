@@ -91,11 +91,11 @@ async function getCPU() {
 }
 
 async function getJoke() {
-    await fetch("https://api.chucknorris.io/jokes/random")
+    await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single")
     .then(response => response.json())
     .then(joke =>{
         console.log(joke)
-        displayMessage.innerText = joke.value;
+        displayMessage.innerText = joke.joke;
     });
 }
 
