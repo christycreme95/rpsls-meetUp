@@ -106,9 +106,7 @@ async function getCPU(){
 function compare(user,cpu){
     console.log("User: " + user, "CPU : "+ cpu)
     // I didn't add all the functions and I added the gameplay add d-none here
-
     enter.classList.add('d-none');
-    gamePlay.classList.add('d-none');
     
 
 
