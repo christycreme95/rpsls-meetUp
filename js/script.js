@@ -45,7 +45,6 @@ cpuBtn.addEventListener("click", function () {
     getCPU();
     setTimeout(function(){
         gamePlay.classList.remove('d-none');
-        letsPlay.classList.remove('d-none');
     },500)
     
 });
