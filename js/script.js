@@ -51,23 +51,23 @@ cpuBtn.addEventListener("click", function () {
 
 rock.addEventListener("click", function () {
     userAns = 'Rock';
-    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
+    enter.classList.remove('d-none');
 });
 paper.addEventListener("click", function () {
     userAns = 'Paper';
-    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
+    enter.classList.remove('d-none');
 });
 scissors.addEventListener("click", function () {
     userAns = 'Scissors';
-    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
+    enter.classList.remove('d-none');
 });
 lizard.addEventListener("click", function () {
     userAns = 'Lizard';
-    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
+    enter.classList.remove('d-none');
 });
 spock.addEventListener("click", function () {
     userAns = 'Spock';
-    if (enter.classList.contains('d-none')) enter.classList.remove('d-none');
+    enter.classList.remove('d-none');
         
 });
 enter.addEventListener("click", function () {
